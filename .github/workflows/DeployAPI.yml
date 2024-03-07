@@ -16,8 +16,6 @@ jobs:
          username: ${{ secrets.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_TOKEN }}
      - name: Build API image
-       env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
        run: | 
           docker build --platform linux --tag camilopr11/musicapi:latest -f Dockerfile .
      - name: Publish API image
