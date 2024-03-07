@@ -12,6 +12,14 @@ router.post("/artist", (req, res) => {
       .catch((error) => res.json({ message: error }));
   });
 
-// Todo: Get all artists,  Get artist by ID, Update artist, Delete artist
+// Get all artists
+router.get("/artists", (req, res) => {
+    artistSchema
+      .find()
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  });
+
+// Todo: Get artist by ID, Update artist, Delete artist
 
 module.exports = router;
