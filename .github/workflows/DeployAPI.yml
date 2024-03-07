@@ -17,7 +17,7 @@ jobs:
          password: ${{ secrets.DOCKERHUB_TOKEN }}
      - name: Build API image
        run: | 
-          docker build --build-arg MONGODB_URI=${{ secrets.MONGODB_URI }} --platform linux --tag camilopr11/musicapi:latest -f Dockerfile .
+          docker build --build-arg MONGODB_URI=${{ secrets.MONGODB_URI }} --tag camilopr11/musicapi:latest -f Dockerfile .
      - name: Publish API image
        run: |
           docker push camilopr11/musicapi:latest
