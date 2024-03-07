@@ -1,10 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const artistRoutes = require("./routes/artist");
+const songRoutes = require("./routes/song");
 
 // Settings
 const app = express();
 const port = process.env.PORT || 9000;
+
+// Middleware
+app.use(express.json());
+app.use('/api', artistRoutes, songRoutes);
 
 // Routes
 app.get("/", (req, res) => {
