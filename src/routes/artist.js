@@ -29,6 +29,15 @@ router.get("/artists/:id", (req, res) => {
       .catch((error) => res.json({ message: error }));
   });
 
-// Todo: Update artist, Delete artist
+// Delete an artist by ID
+router.delete("/artists/:id", (req, res) => {
+        const { id } = req.params;
+        artistSchema
+            .deleteOne({ _id: id })
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }));
+    });
+
+// Todo: Update artist
 
 module.exports = router;
