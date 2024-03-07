@@ -26,5 +26,7 @@ mongoose
 // Export the Express app
 module.exports = app;
 
-// Server listening
-app.listen(port, () => console.log("Server listening on port", port));
+// Start the server if this file is run directly
+if (require.main === module) {
+    app.listen(port, () => console.log("Server listening on port", port));
+}

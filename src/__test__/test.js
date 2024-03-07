@@ -25,10 +25,8 @@ const testSongData = {
 };
 
 afterAll(async () => {
-  // Close the MongoDB connection
-  await mongoose.connection.close();
+  await mongoose.disconnect();
 });
-
 
 describe('Artist endpoints', () => {
   // Test POST /api/artist
