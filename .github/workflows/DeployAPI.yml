@@ -2,8 +2,7 @@ name: Docker MusicAPI CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - '/**'
+    
 jobs:
   deploy:
     name: Docker build
