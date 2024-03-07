@@ -1,7 +1,7 @@
-name: Docker MusicAPI CI
+name: Docker MusicAPI TEST CI
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
   deploy:
@@ -18,12 +18,3 @@ jobs:
      - name: Build API image
        run: | 
           docker build --platform linux --tag camilopr11/musicapi:latest -f Dockerfile .
-     - name: Publish API image
-       run: |
-          docker push camilopr11/musicapi:latest
-     - name: App service auth
-       uses: azure/webapps-deploy@v2
-       with:
-         app-name: 'musicapidev'
-         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-         images: 'camilopr11/musicapi:latest'

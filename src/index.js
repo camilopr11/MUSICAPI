@@ -23,5 +23,8 @@ mongoose
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.error(error));
 
+// Export the Express app
+module.exports = app;
+
 // Server listening
 app.listen(port, () => console.log("Server listening on port", port));
