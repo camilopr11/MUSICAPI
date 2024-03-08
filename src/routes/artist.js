@@ -38,6 +38,14 @@ router.delete("/artists/:id", (req, res) => {
             .catch((error) => res.json({ message: error }));
     });
 
-// Todo: Update artist
+// Update an Artist
+router.put("/artists/:id", (req, res) => {
+        const { id } = req.params;
+        const { name, type, area, genres, active } = req.body;
+        artistSchema
+            .updateOne({ _id: id }, { $set: { name, type, area, genres, active } })
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }));
+});
 
 module.exports = router;
