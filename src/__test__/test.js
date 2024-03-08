@@ -93,4 +93,11 @@ describe('Song endpoints', () => {
     expect(res.statusCode).toEqual(200);
   });
 
+  // Test DELETE /api/songs/
+  test('Delete a song by ID', async () => {
+    const song = await Song.create(testSongData);
+    const res = await request(app).delete(`/api/songs/`);
+    expect(res.statusCode).toEqual(200);
+  });
+
 });
