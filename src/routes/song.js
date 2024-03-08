@@ -40,12 +40,12 @@ router.delete("/songs/:id", (req, res) => {
 
 // Update a Song
 router.put("/songs/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, genre, artist, artists, dateReleased } = req.body;
-  userSchema
-    .updateOne({ _id: id }, { $set: { name, genre, artist, artists, dateReleased } })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+        const { id } = req.params;
+        const { name, genre, artist, artists, dateReleased } = req.body;
+        songSchema
+            .updateOne({ _id: id }, { $set: { name, genre, artist, artists, dateReleased } })
+            .then((data) => res.json(data))
+            .catch((error) => res.json({ message: error }));
 });
 
 module.exports = router;
