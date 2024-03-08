@@ -1,4 +1,4 @@
-name: Docker MusicAPI TEST CI
+name: MusicAPI TEST
 on:
   push:
     branches: [ "develop" ]
