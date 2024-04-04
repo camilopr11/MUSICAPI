@@ -18,8 +18,13 @@ app.get("/", (req, res) => {
 });
 
 // Health check endpoint
-app.get('/api', (req, res) => {
-  res.status(200).json({ status: 'UP', message: 'MusicAPI is running' });
+app.get('/test', (req, res) => {
+  res.status(200).json({ status: 'UP', message: 'MusicAPI TEST is running, entities: /artists /songs' });
+});
+
+// Health check endpoint
+app.get('/prod', (req, res) => {
+  res.status(200).json({ status: 'DOWN', message: 'ERROR: TEST ENV' });
 });
 
 // MongoDB connection
