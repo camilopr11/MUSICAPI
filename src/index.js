@@ -17,6 +17,11 @@ app.get("/", (req, res) => {
     res.send("Welcome to MusicAPI");
 });
 
+// Health check endpoint
+app.get('/api', (req, res) => {
+  res.status(200).json({ status: 'UP', message: 'MusicAPI is running' });
+});
+
 // MongoDB connection
 mongoose
   .connect(process.env.MONGODB_URI)

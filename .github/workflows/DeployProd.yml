@@ -22,13 +22,13 @@ jobs:
          password: ${{ secrets.DOCKERHUB_TOKEN }}
      - name: Build API image
        run: | 
-          docker build --platform linux --tag camilopr11/musicapi:latest -f Dockerfile .
+          docker build --platform linux --tag camilopr11/musicapi:prod -f Dockerfile .
      - name: Publish API image
        run: |
-          docker push camilopr11/musicapi:latest
+          docker push camilopr11/musicapi:prod
      - name: App service auth
        uses: azure/webapps-deploy@v2
        with:
-         app-name: 'musicapidev'
-         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-         images: 'camilopr11/musicapi:latest'
+         app-name: 'musicapiprod'
+         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
+         images: 'camilopr11/musicapi:prod'
