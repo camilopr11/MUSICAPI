@@ -18,8 +18,12 @@ app.get("/", (req, res) => {
 });
 
 // Health check endpoint
-app.get('/api', (req, res) => {
-  res.status(200).json({ status: 'UP', message: 'MusicAPI is running' });
+app.get('/prod', (req, res) => {
+  res.status(200).json({ "status":"UP","message":"MusicAPI PROD is running, entities: /artists /songs" });
+});
+
+app.get('/test', (req, res) => {
+  res.status(200).json({ "status":"DOWN","message":"ERROR: PROD ENV" });
 });
 
 // MongoDB connection
