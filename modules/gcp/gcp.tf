@@ -21,7 +21,7 @@ resource "google_cloud_run_service" "default" {
       containers {
         image = var.docker_image
         env {
-          name  = "MONGO_URI"
+          name  = "MONGODB_URI"
           value = var.mongodb_connection_string_with_credentials
         }
       }

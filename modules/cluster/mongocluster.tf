@@ -65,5 +65,5 @@ resource "mongodbatlas_database_user" "test" {
 }
 
 output "mongodb_connection_string_with_credentials" {
-  value = "mongodb+srv://admin:admin123@${mongodbatlas_cluster.cluster.connection_strings[0].standard}/musicapi"
+  value = "mongodb+srv://admin:admin123@${replace(mongodbatlas_cluster.cluster.connection_strings[0].standard_srv, "mongodb+srv://", "")}/musicapi?retryWrites=true&w=majority&appName=my-cluster"
 }
