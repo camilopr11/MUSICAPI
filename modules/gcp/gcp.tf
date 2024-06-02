@@ -14,7 +14,7 @@ terraform {
 }
 
 resource "google_cloud_run_service" "default" {
-  name     = "my-api-service"
+  name     = "musicapi-service"
   location = var.gcp_region
   template {
     spec {

@@ -38,3 +38,11 @@ module "gcp" {
   docker_image    = var.docker_image
   mongodb_connection_string_with_credentials = module.mongocluster.mongodb_connection_string_with_credentials
 }
+
+output "MONGO_URI" {
+  value = module.mongocluster.mongodb_connection_string_with_credentials
+}
+
+output "SERVICE_URL" {
+  value = module.gcp.service_url
+}
