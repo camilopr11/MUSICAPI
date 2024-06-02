@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
 const artistRoutes = require("./routes/artist");
 const songRoutes = require("./routes/song");
 
