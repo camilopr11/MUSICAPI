@@ -64,26 +64,6 @@ resource "mongodbatlas_database_user" "test" {
   }
 }
 
-resource "mongodbatlas_mongo_database" "musicapi" {
-  project_id   = var.project_id
-  cluster_name = var.cluster_name
-  name         = "musicapi"
-}
-
-resource "mongodbatlas_mongo_collection" "artists" {
-  project_id   = var.project_id
-  cluster_name = var.cluster_name
-  database_name = mongodbatlas_mongo_database.musicapi.name
-  name         = "artists"
-}
-
-resource "mongodbatlas_mongo_collection" "songs" {
-  project_id   = var.project_id
-  cluster_name = var.cluster_name
-  database_name = mongodbatlas_mongo_database.musicapi.name
-  name         = "songs"
-}
-
 output "mongodb_connection_string_with_credentials" {
   value = "mongodb+srv://admin:admin123@${mongodbatlas_cluster.cluster.connection_strings[0].standard}/musicapi"
 }
