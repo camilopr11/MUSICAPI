@@ -26,7 +26,7 @@ variable "region" {
 variable "gcp_project" {
   type = string
   description = "GCP project"
-  default = "musicapidev"
+  default = "musicapitest"
 }
 
 variable "gcp_region" {
@@ -38,7 +38,7 @@ variable "gcp_region" {
 variable "gcp_credentials" {
   type = string
   description = "GCP credentials file"
-  default = "musicapidev-fe94cbc4bcd3.json"
+  default = "musicapitest-cdf49fa3a641"
 }
 
 variable "docker_image" {
