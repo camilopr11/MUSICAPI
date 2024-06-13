@@ -43,6 +43,6 @@ variable "gcp_credentials" {
 
 variable "docker_image" {
   type = string
-  description = "Docker image to deploy"
+  description = "Docker image"
   default = "docker.io/camilopr11/musicapi:prod"
 }
