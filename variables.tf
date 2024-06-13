@@ -38,7 +38,7 @@ variable "gcp_region" {
 variable "gcp_credentials" {
   type = string
   description = "GCP credentials file"
-  default = "musicapitest-cdf49fa3a641"
+  default = "musicapitest-cdf49fa3a641.json"
 }
 
 variable "docker_image" {
